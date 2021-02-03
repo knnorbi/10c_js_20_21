@@ -1,0 +1,31 @@
+body {
+    background-color: antiquewhite;
+}
+
+li {
+    color: gray;
+}
+
+.piros {
+    color: red;
+}
+
+#bk {
+    background-color: aquamarine;
+}
+
+ol, ul {
+    font-weight: bold;
+}
+
+nav ul {
+    font-weight: normal;
+}
+
+ol li, table {
+    color: green;
+}
+
+h1.mas {
+    color: yellow;
+}
