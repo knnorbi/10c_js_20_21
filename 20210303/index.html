@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Basics</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="hello">Hello JS!</h1>
+        <input type="number" id="base" value="2" />
+        <input type="number" id="pow" value="10" />
+        <button onclick="welcome();">Go</button>
+        <div id="list">
+            
+        </div>
+    </div>
+    
+    
+    <script>
+        document.getElementById("hello").style.color = "red";
+        
+        function welcome() {
+            document.getElementById("hello").innerHTML = "Hello JavaScript!";
+            
+            var list = document.getElementById("list");
+            var n = document.getElementById("pow").value;
+            var b = document.getElementById("base").value;
+            
+            if (n <= 100) {
+            
+                list.innerHTML = "<ul>";
+
+                for (var i = 0; i <= n; i++) {
+                    list.innerHTML += 
+                        "<li>"
+                        + b
+                        + "<sup>" + i + "</sup>: "
+                        + (b ** i)
+                        + "</li>";
+                }            
+
+                list.innerHTML += "</ul>";
+            }
+            else {
+                alert("Max 100!");
+            }
+            
+        }
+    </script>
+</body>
+</html>
