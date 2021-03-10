@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Basics #2</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="form-group">
+                <label for="exampleInputEmail">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail">
+                <div class="invalid-feedback" id="wrongEmail">Wrong email!</div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword">
+                <div class="invalid-feedback" id="wrongPassword">Wrong password!</div>
+            </div>
+            <button onclick="formCheck()" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <script>
+        var users = [ { email: "demo@asd.hu", password: "asdasd" },
+                     { email: "test@asd.hu", password: "asd" } ];
+        
+        function formCheck() {
+            var inputEmail = document.getElementById("exampleInputEmail").value;
+            var inputPass = document.getElementById("exampleInputPassword").value;
+            
+            document.getElementById("wrongEmail").style.display = "none";
+            document.getElementById("wrongPassword").style.display = "none";
+            
+            var i = 0;
+            while (i < users.length && !(inputEmail == users[i].email && inputPass == users[i].password)) {
+                i++;
+            }
+            if (i < users.length) {
+                alert("Success!");
+            }
+            
+            else {
+                alert("FAIL");
+            }
+            
+//            if (inputEmail == users[0].email && inputPass == users[0].password) {
+//                alert("Success!");
+//            }
+//            else {
+//                if (inputEmail != users[0].email ) {
+//                    document.getElementById("wrongEmail").style.display = "block";
+//                }
+//                if (inputPass != users[0].password) {
+//                    document.getElementById("wrongPassword").style.display = "block";
+//                }
+//            }
+        }
+    </script>
+</body>
+</html>
